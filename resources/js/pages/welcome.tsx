@@ -26,31 +26,23 @@ export default function Welcome() {
                         </a>
 
                         <div className="hidden items-center gap-8 md:flex">
-                            <a
-                                href="#home"
-                                className="text-sm font-medium transition-colors hover:text-primary"
-                            >
+                            <a href="#home" className="text-sm font-medium transition-colors hover:text-primary">
                                 Home
                             </a>
 
-                            <a
-                                href="#about"
-                                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-                            >
+                            <a href="#about" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
                                 About
                             </a>
 
-                            <a
-                                href="#projects"
-                                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-                            >
+                            <a href="#skills" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+                                Skills
+                            </a>
+
+                            <a href="#projects" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
                                 Projects
                             </a>
 
-                            <a
-                                href="#contact"
-                                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-                            >
+                            <a href="#contact" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
                                 Contact
                             </a>
                         </div>
@@ -247,37 +239,338 @@ export default function Welcome() {
                         </div>
                     </section>
 
-                    {/* Temporary Projects section */}
+                    {/* Skills */}
+                    <section
+                        id="skills"
+                        className="border-t border-border/50 px-6 py-28 lg:px-8"
+                    >
+                        <div className="mx-auto max-w-7xl">
+                            <div className="max-w-2xl">
+                                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+                                    Skills
+                                </p>
+
+                                <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
+                                    Technologies I work with.
+                                </h2>
+
+                                <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                                    A selection of technologies and tools I use to build
+                                    modern, reliable web applications.
+                                </p>
+                            </div>
+
+                            <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                {[
+                                    {
+                                        name: 'Laravel',
+                                        description: 'Backend development & APIs',
+                                    },
+                                    {
+                                        name: 'React',
+                                        description: 'Modern frontend applications',
+                                    },
+                                    {
+                                        name: 'PHP',
+                                        description: 'Server-side application development',
+                                    },
+                                    {
+                                        name: 'JavaScript',
+                                        description: 'Interactive web experiences',
+                                    },
+                                    {
+                                        name: 'PostgreSQL',
+                                        description: 'Relational database development',
+                                    },
+                                    {
+                                        name: 'Git & GitHub',
+                                        description: 'Version control & collaboration',
+                                    },
+                                ].map((skill) => (
+                                    <div
+                                        key={skill.name}
+                                        className="group rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg"
+                                    >
+                                        <h3 className="text-lg font-semibold">
+                                            {skill.name}
+                                        </h3>
+
+                                        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                                            {skill.description}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Projects */}
                     <section
                         id="projects"
-                        className="border-t border-border/50 px-6 py-24 lg:px-8"
+                        className="border-t border-border/50 px-6 py-28 lg:px-8"
                     >
                         <div className="mx-auto max-w-7xl">
-                            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
-                                Projects
-                            </p>
+                            <div className="max-w-2xl">
+                                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+                                    Projects
+                                </p>
 
-                            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                                Some of my work.
-                            </h2>
+                                <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
+                                    Some of my work.
+                                </h2>
+
+                                <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                                    A selection of projects I've built while learning,
+                                    experimenting and solving real-world problems.
+                                </p>
+                            </div>
+
+                            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                                {[
+                                    {
+                                        title: 'MA-CIMS',
+                                        description:
+                                            'A community information management system built to manage members, families, announcements and administrative workflows.',
+                                        technologies: ['Laravel', 'PostgreSQL', 'Blade', 'JavaScript'],
+                                        github: 'https://github.com/ahmad85003/ma-cims',
+                                        demo: 'https://cims.asrotech.com',
+                                    },
+                                    {
+                                        title: 'Personal Portfolio',
+                                        description:
+                                            'A modern developer portfolio designed to showcase my skills, projects and professional experience.',
+                                        technologies: ['Laravel', 'React', 'TypeScript', 'Inertia'],
+                                        github: 'https://github.com/ahmad85003/personal-portfolio',
+                                        demo: '#',
+                                    },
+                                    {
+                                        title: 'Certificate Generator',
+                                        description:
+                                            'A web application for generating certificates in bulk from templates and structured participant data.',
+                                        technologies: ['Laravel', 'PHP', 'PDF', 'Excel'],
+                                        github: '#',
+                                        demo: '#',
+                                    },
+                                ].map((project) => (
+                                    <article
+                                        key={project.title}
+                                        className="group flex flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl"
+                                    >
+                                        {/* Project image placeholder */}
+                                        <div className="flex aspect-video items-center justify-center rounded-xl border border-border bg-muted/40">
+                                            <span className="text-sm font-medium text-muted-foreground">
+                                                Project Preview
+                                            </span>
+                                        </div>
+
+                                        <div className="mt-6 flex flex-1 flex-col">
+                                            <h3 className="text-xl font-semibold tracking-tight">
+                                                {project.title}
+                                            </h3>
+
+                                            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                                                {project.description}
+                                            </p>
+
+                                            {/* Technologies */}
+                                            <div className="mt-5 flex flex-wrap gap-2">
+                                                {project.technologies.map((technology) => (
+                                                    <span
+                                                        key={technology}
+                                                        className="rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground"
+                                                    >
+                                                        {technology}
+                                                    </span>
+                                                ))}
+                                            </div>
+
+                                            {/* Links */}
+                                            <div className="mt-6 flex items-center gap-4 border-t border-border/50 pt-5">
+                                                {project.github !== '#' && (
+                                                    <a
+                                                        href={project.github}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-sm font-semibold transition-colors hover:text-primary"
+                                                    >
+                                                        GitHub →
+                                                    </a>
+                                                )}
+
+                                                {project.demo !== '#' && (
+                                                    <a
+                                                        href={project.demo}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-sm font-semibold transition-colors hover:text-primary"
+                                                    >
+                                                        Live Demo →
+                                                    </a>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </article>
+                                ))}
+                            </div>
                         </div>
                     </section>
 
-                    {/* Temporary Contact section */}
+
+                    {/* Contact */}
                     <section
                         id="contact"
-                        className="border-t border-border/50 px-6 py-24 lg:px-8"
+                        className="border-t border-border/50 px-6 py-28 lg:px-8"
                     >
                         <div className="mx-auto max-w-7xl">
-                            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
-                                Contact
-                            </p>
+                            <div className="grid gap-16 lg:grid-cols-2">
+                                {/* Contact information */}
+                                <div>
+                                    <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+                                        Contact
+                                    </p>
 
-                            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                                Let's work together.
-                            </h2>
+                                    <h2 className="mt-4 max-w-lg text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+                                        Let's build something together.
+                                    </h2>
+
+                                    <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
+                                        Have a project, opportunity, or idea you'd like to
+                                        discuss? Feel free to get in touch.
+                                    </p>
+
+                                    <div className="mt-10 space-y-6">
+                                        {/* Email */}
+                                        <a
+                                            href="mailto:hello@example.com"
+                                            className="group flex items-center gap-4"
+                                        >
+                                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border transition-colors group-hover:border-primary group-hover:text-primary">
+                                                <Mail className="h-5 w-5" />
+                                            </div>
+
+                                            <div>
+                                                <p className="text-sm text-muted-foreground">
+                                                    Email
+                                                </p>
+
+                                                <p className="mt-1 font-medium">
+                                                    hello@example.com
+                                                </p>
+                                            </div>
+                                        </a>
+
+                                        {/* GitHub */}
+                                        <a
+                                            href="https://github.com/ahmad85003"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="group flex items-center gap-4"
+                                        >
+                                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border transition-colors group-hover:border-primary group-hover:text-primary">
+                                                <Github className="h-5 w-5" />
+                                            </div>
+
+                                            <div>
+                                                <p className="text-sm text-muted-foreground">
+                                                    GitHub
+                                                </p>
+
+                                                <p className="mt-1 font-medium">
+                                                    github.com/ahmad85003
+                                                </p>
+                                            </div>
+                                        </a>
+
+                                        {/* LinkedIn */}
+                                        <a
+                                            href="#"
+                                            className="group flex items-center gap-4"
+                                        >
+                                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border transition-colors group-hover:border-primary group-hover:text-primary">
+                                                <Linkedin className="h-5 w-5" />
+                                            </div>
+
+                                            <div>
+                                                <p className="text-sm text-muted-foreground">
+                                                    LinkedIn
+                                                </p>
+
+                                                <p className="mt-1 font-medium">
+                                                    LinkedIn Profile
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* Contact form */}
+                                <div className="rounded-2xl border border-border p-6 sm:p-8">
+                                    <h3 className="text-xl font-semibold">
+                                        Send me a message
+                                    </h3>
+
+                                    <form className="mt-8 space-y-6">
+                                        <div>
+                                            <label
+                                                htmlFor="name"
+                                                className="text-sm font-medium"
+                                            >
+                                                Name
+                                            </label>
+
+                                            <input
+                                                id="name"
+                                                type="text"
+                                                placeholder="Your name"
+                                                className="mt-2 w-full rounded-xl border border-border bg-transparent px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label
+                                                htmlFor="email"
+                                                className="text-sm font-medium"
+                                            >
+                                                Email
+                                            </label>
+
+                                            <input
+                                                id="email"
+                                                type="email"
+                                                placeholder="you@example.com"
+                                                className="mt-2 w-full rounded-xl border border-border bg-transparent px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label
+                                                htmlFor="message"
+                                                className="text-sm font-medium"
+                                            >
+                                                Message
+                                            </label>
+
+                                            <textarea
+                                                id="message"
+                                                rows={5}
+                                                placeholder="Tell me about your project..."
+                                                className="mt-2 w-full resize-none rounded-xl border border-border bg-transparent px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary"
+                                            />
+                                        </div>
+
+                                        <button
+                                            type="button"
+                                            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
+                                        >
+                                            Send Message
+                                            <ArrowRight className="h-4 w-4" />
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </section>
+
                 </main>
 
                 {/* Footer */}
